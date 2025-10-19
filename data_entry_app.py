@@ -88,17 +88,17 @@ class DataRecordForm(ttk.Frame):
             "Med Height": tk.DoubleVar(),
             "Notes": tk.StringVar(),
         }
-        r_info = self._add_frame("Record Information", cols=3)
+        r_info = self._add_frame("Record Information")
 
-        LabeledInput(self, "Date", var=self._vars["Date"]).grid(row=0, column=0)
+        LabeledInput(r_info, "Date", var=self._vars["Date"]).grid(row=0, column=0)
         LabeledInput(
-            self,
+            r_info,
             "Time",
             input_cls=ttk.Combobox,
             var=self._vars["Time"],
             input_args={"values": ["08:00", "12:00", "16:00", "20:00"]},
         ).grid(row=0, column=1)
-        LabeledInput(self, "Technician", var=self._vars["Technician"]).grid(
+        LabeledInput(r_info, "Technician", var=self._vars["Technician"]).grid(
             row=0, column=2
         )
         LabeledInput(
